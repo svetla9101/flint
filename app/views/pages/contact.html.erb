@@ -1,2 +1,44 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<% provide(:title, "Обратная связь") %>
+<div id="main">
+  <div id="primary">
+    <div id="content" role="main">     
+
+      <article class="page hentry">
+        <header class="entry-header">
+          <h1 class="entry-title"><a href="#"><%= yield(:title) %></a></h1>
+        </header>
+        <div class="form-container">
+          <div class="response"></div>
+          <p class="form-control-error"><%= flash[:error] %></p>
+          <p class="form-control-success"><%= flash[:success] %></p>
+          <form class="forms" action="create" method="post">
+            <fieldset>
+              <ol>
+                <li>Ваше имя</li>
+                <li class="form-row text-input-row">
+                  <input type="text" name="order[name]" class="text-input defaultText"/>
+                </li>
+                <li>Ваша электронная почта*</li>
+                <li class="form-row text-input-row">
+                  <input type="text" placeholder="mail@example.org" required="required" name="order[email]" class="text-input defaultText required email"/>
+                </li>
+                <li>Ваш номер телефона</li>
+                <li class="form-row text-input-row">
+                  <input type="text" name="order[mobile]" class="text-input defaultText" title="Subject"/>
+                </li>
+                <li>Сообщение*</li>
+                <li class="form-row text-area-row">
+                  <textarea name="order[message]" required="required" class="text-area required"></textarea>
+                </li>
+                <li class="button-row">
+                  <input type="submit" value="Отправить" name="submit" class="btn-submit" />
+                </li>
+                <li class="form-control-error">* - поле обязательно для заполнения</li>
+              </ol>
+            </fieldset>
+          </form>
+      </article>
+  
+    </div>
+  </div>
+</div>

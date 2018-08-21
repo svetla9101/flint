@@ -1,2 +1,40 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% provide(:title, 'Кремень "Гега"') %>
+<div id="main">
+  <div id="primary">
+    <div id="content" role="main">
+      
+      <article class="page hentry">
+        <header class="entry-header">
+          <div class="intro">
+            <h2><i>Организм человека состоит более чем на 70% из воды, поэтому от качества воды, которую мы    употребляем, вплотную зависит и наше здоровье.</i></h2>
+            <span style="display:block; height:20px;"></span>
+            <h1 class="entry-title">Кремень "Гега" - </h1>отобранные по особой методике кусочки минерала кремня, которые предназначены для улучшения качества питьевой воды.
+          </div>
+          <div class="intro">
+            <div class="one-half"><br/> <h4>В чем сила кремня "Гега"?</h4>
+              Это наличие в кусочках окаменевшей органики, которая делает эти кусочки феноменальным биокатализатором, способным перерабатывать энергию света и в тысячи раз ускорять окислительно-восстановительные реакции в воде, придавая ей целебные свойства.
+            </div>  
+            <div class="one-half last"><a href="<%=pages_about_path %>"><%= image_tag(image_url("main.jpg"), alt: 'Кремень "Гега"', size: "720x400") %></a>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </header>
+      </article>
+
+      <article id="order" class="page hentry">
+            <h3>Обратная связь</h3>
+            <form class="new_order" id="new_order" action="pages/create" accept-charset="UTF-8" method="post">
+              <input placeholder="Имя" type="text" name="order[name]" id="order_name">
+              <input placeholder="е-mail*" required="required" type="text" name="order[email]" id="order_email">
+              <input placeholder="номер телефона"  type="text" name="order[mobile]" id="order_mobile">
+              <textarea placeholder="сообщение*" required="required" name="order[message]" id="order_message"></textarea>
+              <p class="form-control-error">* - поле обязательно для заполнения</p>
+              <button type="submit" name="commit"</i> Отправить сообщение</button>
+            </form>
+        
+        
+      </article>
+  
+    </div>
+  </div>
+</div>

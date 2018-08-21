@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flint</title>
+    <title>Кремень "Гега" | <%= yield(:title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="singular page">
+    <div id="page" class="hfeed">
+      <div id="wrapper">
+        <%= render('layouts/header') %>
+        <%= yield %>
+        <%= render('layouts/footer') %>
+      </div>
+    </div>
   </body>
+
 </html>
