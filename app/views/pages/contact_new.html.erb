@@ -1,0 +1,26 @@
+<% provide(:title, "Обратная связь") %>
+<div id="main">
+  <div id="primary">
+    <div id="content" role="main">     
+
+      <article class="page hentry">
+        <header class="entry-header">
+          <h1 class="entry-title"><a href="#"><%= yield(:title) %>.</a></h1>
+        </header>
+        <div class="form-container">
+          <p class="form-control-error"><%= flash[:error] %></p>
+          <p class="form-control-success"><%= flash[:success] %></p>
+          <%= simple_form_for @order, url: {action: "create"}, html: {class: "form"} do |f| %>
+            <%= f.input :name, label: "Ваше имя", class: "text-input" %>
+            <%= f.input :email, label: "Ваша электронная почта", laceholder: 'user@domain.com'%>
+            <%= f.input :mobile, label: "Ваш номер телефона"%>
+            <%= f.input :message, label: "Сообщение"%>
+            <%= f.button :submit, "Отправить сообщение", class: "btn-submit"%>
+            <div class="form-control-error">* - поле обязательно для заполнения</div>
+          <% end %>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
